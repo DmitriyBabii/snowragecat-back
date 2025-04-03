@@ -1,4 +1,4 @@
-package com.snowragecat.main.openai.models;
+package com.snowragecat.openai.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.snowragecat.main.configs;
+package com.snowragecat.openai.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

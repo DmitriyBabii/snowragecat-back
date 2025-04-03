@@ -1,8 +1,8 @@
-package com.snowragecat.main.openai.services;
+package com.snowragecat.openai.services;
 
-import com.snowragecat.main.openai.models.ChatMessage;
-import com.snowragecat.main.openai.models.ChatRequest;
-import com.snowragecat.main.openai.models.ChatResponse;
+import com.snowragecat.openai.models.ChatMessage;
+import com.snowragecat.openai.models.ChatRequest;
+import com.snowragecat.openai.models.ChatResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;

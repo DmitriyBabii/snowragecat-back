@@ -2,7 +2,6 @@ package com.snowragecat.main.controllers;
 
 import com.snowragecat.main.jpa.models.dtos.LeadFormRequest;
 import com.snowragecat.main.jpa.services.LeadService;
-import com.snowragecat.main.openai.services.OpenAiService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class LeadController {
     private final LeadService leadService;
-    private final OpenAiService openAiService;
 
     @PostMapping
     public ResponseEntity<Void> evaluateLead(@RequestBody @Valid LeadFormRequest leadFormRequest) {
-        leadService.saveAndProcessLead(leadFormRequest);
+        leadService.save(leadFormRequest);
+        leadService.processLeadData(leadFormRequest);
         return ResponseEntity.ok().build();
     }
 }

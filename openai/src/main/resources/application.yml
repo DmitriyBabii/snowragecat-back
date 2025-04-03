@@ -4,3 +4,16 @@ server:
 spring:
   application:
     name: crm-ai
+
+  rabbitmq:
+    host: localhost
+    port: ${RABBIT_PORT}
+    username: ${RABBIT_USER}
+    password: ${RABBIT_PASSWORD}
+
+
+openai:
+  api:
+    model: gpt-4-turbo
+    url: https://api.openai.com/v1/chat/completions
+    key: ${OPENAI_KEY}
