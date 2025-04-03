@@ -23,6 +23,7 @@
 	</developers>
     <modules>
         <module>main</module>
+        <module>openai</module>
     </modules>
     <scm>
 		<connection/>
