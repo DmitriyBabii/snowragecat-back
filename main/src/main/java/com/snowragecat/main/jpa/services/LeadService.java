@@ -1,9 +1,9 @@
 package com.snowragecat.main.jpa.services;
 
-import com.snowragecat.main.jpa.entities.Lead;
+import com.snowragecat.main.jpa.models.entities.Lead;
 import com.snowragecat.main.jpa.repositories.LeadRepository;
-import com.snowragecat.main.mappers.LeadMapper;
-import com.snowragecat.main.models.dtos.LeadFormRequest;
+import com.snowragecat.main.jpa.mappers.LeadMapper;
+import com.snowragecat.main.jpa.models.dtos.LeadFormRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

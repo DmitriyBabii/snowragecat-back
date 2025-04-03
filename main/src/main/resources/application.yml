@@ -12,3 +12,9 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: false
+
+openai:
+  api:
+    model: gpt-4-turbo
+    url: https://api.openai.com/v1/chat/completions
+    key: ${OPENAI_KEY}

@@ -1,6 +1,6 @@
 package com.snowragecat.main.jpa.repositories;
 
-import com.snowragecat.main.jpa.entities.Evaluation;
+import com.snowragecat.main.jpa.models.entities.Evaluation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

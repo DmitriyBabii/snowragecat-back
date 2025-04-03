@@ -1,4 +1,4 @@
-package com.snowragecat.main.jpa.entities;
+package com.snowragecat.main.jpa.models.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -29,7 +29,4 @@ public class Lead {
 
     @OneToOne(mappedBy = "lead", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Evaluation evaluation;
-
-    @OneToOne(mappedBy = "lead", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Verdict verdict;
 }

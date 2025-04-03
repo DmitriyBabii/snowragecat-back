@@ -1,4 +1,4 @@
-package com.snowragecat.main.models.dtos;
+package com.snowragecat.main.jpa.models.dtos;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
