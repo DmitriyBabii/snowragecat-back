@@ -1,6 +1,6 @@
-package com.snowragecat.main.repositories;
+package com.snowragecat.main.jpa.repositories;
 
-import com.snowragecat.main.models.entities.Verdict;
+import com.snowragecat.main.jpa.entities.Verdict;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

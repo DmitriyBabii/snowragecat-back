@@ -1,6 +1,5 @@
-package com.snowragecat.main.models.entities;
+package com.snowragecat.main.jpa.entities;
 
-import com.snowragecat.main.models.enums.LeadStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,12 +7,14 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Verdict {
+public class Evaluation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String message;
-    private LeadStatus status;
+
+    // TODO check for 0 to 100 value
+    private Integer score;
+    private String comment;
 
     @OneToOne
     @JoinColumn(name = "lead_id", nullable = false)
