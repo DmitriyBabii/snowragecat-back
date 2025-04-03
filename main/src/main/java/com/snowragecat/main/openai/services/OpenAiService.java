@@ -4,7 +4,6 @@ import com.snowragecat.main.openai.models.ChatMessage;
 import com.snowragecat.main.openai.models.ChatRequest;
 import com.snowragecat.main.openai.models.ChatResponse;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -18,7 +17,6 @@ import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 public class OpenAiService {
     public static final double TEMPERATURE = .1;
     public static final int MAX_TOKENS = 200;
