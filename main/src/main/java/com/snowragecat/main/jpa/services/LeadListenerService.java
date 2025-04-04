@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class LeadListenerService {
     private final EvaluationService evaluationService;
-    private final ObjectMapper objectMapper;
 
     @KafkaListener(topics = KafkaConfig.LEAD_VERDICT_TOPIC, groupId = "group")
     public void saveVerdictLead(EvaluateResponse evaluateResponse) {

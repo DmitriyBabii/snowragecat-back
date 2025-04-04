@@ -1,9 +1,6 @@
 package com.snowragecat.main.jpa.models.dtos;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
 
@@ -11,7 +8,7 @@ public record LeadFormRequest(
         @NotBlank String name,
         @NotBlank @Email String email,
         @NotBlank String company,
-        @NotNull BigDecimal budget,
+        @NotNull @Min(0) BigDecimal budget,
         @NotBlank @Size(max = 2000) String message
 ) {
 }
