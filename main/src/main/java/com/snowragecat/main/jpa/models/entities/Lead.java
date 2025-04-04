@@ -27,6 +27,6 @@ public class Lead {
     @CreationTimestamp
     private Timestamp created;
 
-    @OneToOne(mappedBy = "lead", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "lead", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Evaluation evaluation;
 }

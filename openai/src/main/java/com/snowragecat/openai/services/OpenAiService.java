@@ -1,8 +1,12 @@
 package com.snowragecat.openai.services;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.snowragecat.openai.models.ChatMessage;
 import com.snowragecat.openai.models.ChatRequest;
 import com.snowragecat.openai.models.ChatResponse;
+import com.snowragecat.shared.dtos.EvaluateResponse;
+import com.snowragecat.shared.dtos.EvaluationRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -26,7 +30,7 @@ public class OpenAiService {
             Data: {name:string;email:string;company:string;budget:double;message:string;}
                         
             Based on this data, answer in the following format:
-            {score:integer;message:string;comment:string;}
+            {"id":long,"score":integer,"message":string,"comment":string}
                         
             `score`: The client's score from 0 to 100, based on these factors:
             1. **Budget**: if the budget is large, the score is higher.
@@ -50,10 +54,12 @@ public class OpenAiService {
 
 
     private final RestTemplate restTemplate;
+    private final ObjectMapper objectMapper;
 
 
-    public String evaluateLead(String leadData) {
-        ChatRequest chatRequest = new ChatRequest(model, getMessages(leadData), TEMPERATURE, MAX_TOKENS);
+    public EvaluateResponse evaluateLead(EvaluationRequest evaluationRequest) throws JsonProcessingException {
+        String jsonLead = objectMapper.writeValueAsString(evaluationRequest);
+        ChatRequest chatRequest = new ChatRequest(model, getMessages(jsonLead), TEMPERATURE, MAX_TOKENS);
         HttpEntity<ChatRequest> httpEntity = new HttpEntity<>(chatRequest, getHeaders());
         ResponseEntity<ChatResponse> exchange = restTemplate.exchange(
                 url,
@@ -62,11 +68,13 @@ public class OpenAiService {
                 ChatResponse.class
         );
 
-        return Objects.requireNonNull(exchange.getBody())
+        String response = Objects.requireNonNull(exchange.getBody())
                 .choices()
                 .getFirst()
                 .message()
                 .getContent();
+
+        return objectMapper.readValue(response, EvaluateResponse.class);
     }
 
     private HttpHeaders getHeaders() {
