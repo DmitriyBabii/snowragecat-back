@@ -20,8 +20,11 @@ public class EvaluationListenerService {
     @KafkaListener(topics = KafkaConfig.LEAD_EVALUATE_TOPIC, groupId = KafkaConfig.LEAD_EVALUATE_OPENAI_GROUP)
     public void evaluateLead(EvaluationRequest evaluationRequest) {
         try {
-            log.info("Get evaluation request for {}", evaluationRequest.email());
+            log.debug("Sending evaluation request to OpenAI: {}", evaluationRequest.email());
+
             EvaluateResponse evaluateResponse = openAiService.evaluateLead(evaluationRequest);
+            log.info("Received evaluation response from OpenAI for {}", evaluationRequest.email());
+
             evaluationSenderService.sendToVerdict(evaluateResponse);
         } catch (JsonProcessingException e) {
             log.error("Cant get OpenAi response: {}", e.getMessage());

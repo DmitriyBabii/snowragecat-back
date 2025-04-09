@@ -16,6 +16,7 @@ public class EvaluationListenerService {
 
     @KafkaListener(topics = KafkaConfig.EVALUATE_VERDICT_TOPIC, groupId = KafkaConfig.EVALUATE_VERDICT_JPA_GROUP)
     public void saveVerdictLead(EvaluateResponse evaluateResponse) {
+        log.info("Received evaluation response for {}", evaluateResponse.email());
         evaluationService.save(evaluateResponse);
     }
 }

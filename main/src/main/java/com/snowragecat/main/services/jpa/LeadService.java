@@ -1,7 +1,9 @@
 package com.snowragecat.main.services.jpa;
 
+import com.snowragecat.main.mappers.EvaluationMapper;
 import com.snowragecat.main.mappers.LeadMapper;
 import com.snowragecat.main.models.dtos.LeadFormRequest;
+import com.snowragecat.main.models.dtos.LeadResponse;
 import com.snowragecat.main.models.entities.Lead;
 import com.snowragecat.main.repositories.LeadRepository;
 import com.snowragecat.main.services.kafka.EvaluationSenderService;
@@ -18,6 +20,7 @@ import java.util.List;
 public class LeadService {
     private final LeadRepository leadRepository;
     private final LeadMapper leadMapper;
+    private final EvaluationMapper evaluationMapper;
     private final EvaluationSenderService evaluationSenderService;
 
     public void saveAndProcessLeadData(LeadFormRequest leadFormRequest) {
@@ -27,7 +30,14 @@ public class LeadService {
         evaluationSenderService.sendToEvaluate(evaluation);
     }
 
-    public List<Lead> findAll(){
-        return leadRepository.findAll();
+    public List<LeadResponse> findAll() {
+        List<Lead> leads = leadRepository.findAll();
+        return leads.stream()
+                .map(lead -> {
+                    LeadResponse dto = leadMapper.toDto(lead);
+                    dto.setEvaluation(evaluationMapper.toDto(lead.getEvaluation()));
+                    return dto;
+                })
+                .toList();
     }
 }

@@ -30,7 +30,7 @@ public class OpenAiService {
             Data: {name:string;email:string;company:string;budget:double;message:string;}
                         
             Based on this data, answer in the following format:
-            {"id":long,"score":integer,"message":string,"comment":string}
+            {"id":long,"score":integer,"email":string,message":string,"comment":string}
                         
             `score`: The client's score from 0 to 100, based on these factors:
             1. **Budget**: if the budget is large, the score is higher.

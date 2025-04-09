@@ -26,7 +26,8 @@
         <module>openai</module>
         <module>common-dto</module>
         <module>common-config</module>
-    </modules>
+		<module>mail</module>
+	</modules>
     <scm>
 		<connection/>
 		<developerConnection/>
