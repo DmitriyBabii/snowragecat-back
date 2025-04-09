@@ -1,10 +1,4 @@
-server:
-  port: 8081
-
 spring:
-  application:
-    name: crm-ai
-
   kafka:
     bootstrap-servers: "localhost:${KAFKA_PORT}"
     consumer:
@@ -17,10 +11,3 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.trusted.packages: "*"
-
-
-openai:
-  api:
-    model: gpt-4-turbo
-    url: https://api.openai.com/v1/chat/completions
-    key: ${OPENAI_KEY}

@@ -25,6 +25,7 @@
         <module>main</module>
         <module>openai</module>
         <module>common-dto</module>
+        <module>common-config</module>
     </modules>
     <scm>
 		<connection/>

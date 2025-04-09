@@ -1,4 +1,4 @@
-package com.snowragecat.main.jpa.models.dtos;
+package com.snowragecat.main.models.dtos;
 
 import jakarta.validation.constraints.*;
 

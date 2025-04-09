@@ -1,7 +1,7 @@
-package com.snowragecat.main.jpa.models.entities;
+package com.snowragecat.main.models.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.snowragecat.main.jpa.models.enums.LeadStatus;
+import com.snowragecat.main.models.enums.LeadStatus;
 import jakarta.persistence.*;
 import lombok.*;
 

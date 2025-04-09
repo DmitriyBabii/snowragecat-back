@@ -1,4 +1,4 @@
-package com.snowragecat.main.jpa.services;
+package com.snowragecat.main.services.kafka;
 
 import com.snowragecat.main.configs.KafkaConfig;
 import com.snowragecat.shared.dtos.EvaluationRequest;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class LeadSenderService {
+public class EvaluationSenderService {
     private final KafkaTemplate<String, EvaluationRequest> kafkaTemplate;
 
     public void sendToEvaluate(EvaluationRequest evaluationRequest) {

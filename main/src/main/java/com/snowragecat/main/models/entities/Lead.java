@@ -1,4 +1,4 @@
-package com.snowragecat.main.jpa.models.entities;
+package com.snowragecat.main.models.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;

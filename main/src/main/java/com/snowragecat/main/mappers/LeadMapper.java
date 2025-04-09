@@ -1,7 +1,7 @@
-package com.snowragecat.main.jpa.mappers;
+package com.snowragecat.main.mappers;
 
-import com.snowragecat.main.jpa.models.dtos.LeadFormRequest;
-import com.snowragecat.main.jpa.models.entities.Lead;
+import com.snowragecat.main.models.dtos.LeadFormRequest;
+import com.snowragecat.main.models.entities.Lead;
 import com.snowragecat.shared.dtos.EvaluationRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;

@@ -1,8 +1,8 @@
 package com.snowragecat.main.controllers;
 
-import com.snowragecat.main.jpa.models.dtos.LeadFormRequest;
-import com.snowragecat.main.jpa.models.entities.Lead;
-import com.snowragecat.main.jpa.services.LeadService;
+import com.snowragecat.main.models.dtos.LeadFormRequest;
+import com.snowragecat.main.models.entities.Lead;
+import com.snowragecat.main.services.jpa.LeadService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

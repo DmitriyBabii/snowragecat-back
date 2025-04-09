@@ -1,10 +1,10 @@
-package com.snowragecat.main.jpa.services;
+package com.snowragecat.main.services.jpa;
 
-import com.snowragecat.main.jpa.models.entities.Evaluation;
-import com.snowragecat.main.jpa.models.entities.Lead;
-import com.snowragecat.main.jpa.models.enums.LeadStatus;
-import com.snowragecat.main.jpa.repositories.EvaluationRepository;
-import com.snowragecat.main.jpa.repositories.LeadRepository;
+import com.snowragecat.main.models.entities.Evaluation;
+import com.snowragecat.main.models.entities.Lead;
+import com.snowragecat.main.models.enums.LeadStatus;
+import com.snowragecat.main.repositories.EvaluationRepository;
+import com.snowragecat.main.repositories.LeadRepository;
 import com.snowragecat.shared.dtos.EvaluateResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

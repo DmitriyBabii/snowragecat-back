@@ -12,5 +12,5 @@ services:
   kafka:
     image: 'apache/kafka'
     ports:
-      - "9092:9092"
+      - "${KAFKA_PORT}:9092"
     restart: unless-stopped
