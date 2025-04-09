@@ -10,9 +10,11 @@ import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 public class KafkaConfig {
     public static final String LEAD_EVALUATE_TOPIC = "lead_evaluate";
-    public static final String LEAD_VERDICT_TOPIC = "lead_verdict";
+    public static final String LEAD_EVALUATE_OPENAI_GROUP = "lead_evaluate_openai";
 
-    public static final String LEAD_EVALUATE_OPENAI = "lead_evaluate_openai";
+    public static final String EVALUATE_VERDICT_TOPIC = "lead_verdict";
+    public static final String EVALUATE_VERDICT_JPA_GROUP = "lead_verdict_jpa";
+    public static final String EVALUATE_VERDICT_MAIL_GROUP = "lead_verdict_mail";
 
     @Bean
     public NewTopic evaluateTopic() {
@@ -21,6 +23,6 @@ public class KafkaConfig {
 
     @Bean
     public NewTopic verdictTopic() {
-        return TopicBuilder.name(LEAD_VERDICT_TOPIC).build();
+        return TopicBuilder.name(EVALUATE_VERDICT_TOPIC).build();
     }
 }
