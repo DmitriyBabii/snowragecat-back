@@ -14,6 +14,6 @@ public class EvaluationSenderService {
     private final KafkaTemplate<String, EvaluateResponse> kafkaTemplate;
 
     public void sendToVerdict(EvaluateResponse evaluateResponse) {
-        kafkaTemplate.send(KafkaConfig.LEAD_VERDICT_TOPIC, evaluateResponse);
+        kafkaTemplate.send(KafkaConfig.EVALUATE_VERDICT_TOPIC, evaluateResponse);
     }
 }

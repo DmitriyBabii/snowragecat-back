@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class EvaluationListenerService {
     private final EvaluationService evaluationService;
 
-    @KafkaListener(topics = KafkaConfig.LEAD_VERDICT_TOPIC, groupId = "group")
+    @KafkaListener(topics = KafkaConfig.EVALUATE_VERDICT_TOPIC, groupId = KafkaConfig.EVALUATE_VERDICT_JPA_GROUP)
     public void saveVerdictLead(EvaluateResponse evaluateResponse) {
         evaluationService.save(evaluateResponse);
     }

@@ -17,7 +17,7 @@ public class EvaluationListenerService {
     private final EvaluationSenderService evaluationSenderService;
     private final OpenAiService openAiService;
 
-    @KafkaListener(topics = KafkaConfig.LEAD_EVALUATE_TOPIC, groupId = KafkaConfig.LEAD_EVALUATE_OPENAI)
+    @KafkaListener(topics = KafkaConfig.LEAD_EVALUATE_TOPIC, groupId = KafkaConfig.LEAD_EVALUATE_OPENAI_GROUP)
     public void evaluateLead(EvaluationRequest evaluationRequest) {
         try {
             log.info("Get evaluation request for {}", evaluationRequest.email());
