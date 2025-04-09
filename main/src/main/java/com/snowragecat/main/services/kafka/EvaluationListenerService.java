@@ -1,7 +1,7 @@
 package com.snowragecat.main.services.kafka;
 
-import com.snowragecat.main.configs.KafkaConfig;
 import com.snowragecat.main.services.jpa.EvaluationService;
+import com.snowragecat.shared.configs.KafkaConfig;
 import com.snowragecat.shared.dtos.EvaluateResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

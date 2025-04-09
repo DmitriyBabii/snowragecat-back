@@ -11,6 +11,7 @@ import org.springframework.kafka.config.TopicBuilder;
 public class KafkaConfig {
     public static final String LEAD_EVALUATE_TOPIC = "lead_evaluate";
     public static final String LEAD_VERDICT_TOPIC = "lead_verdict";
+    public static final String LEAD_EVALUATE_OPENAI = "lead_evaluate_openai";
 
     @Bean
     public NewTopic evaluateTopic() {

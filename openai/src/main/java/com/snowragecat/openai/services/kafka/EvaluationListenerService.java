@@ -1,8 +1,8 @@
 package com.snowragecat.openai.services.kafka;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.snowragecat.openai.configs.KafkaConfig;
 import com.snowragecat.openai.services.OpenAiService;
+import com.snowragecat.shared.configs.KafkaConfig;
 import com.snowragecat.shared.dtos.EvaluateResponse;
 import com.snowragecat.shared.dtos.EvaluationRequest;
 import lombok.RequiredArgsConstructor;

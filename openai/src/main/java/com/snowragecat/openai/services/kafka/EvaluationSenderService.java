@@ -1,6 +1,6 @@
 package com.snowragecat.openai.services.kafka;
 
-import com.snowragecat.openai.configs.KafkaConfig;
+import com.snowragecat.shared.configs.KafkaConfig;
 import com.snowragecat.shared.dtos.EvaluateResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
