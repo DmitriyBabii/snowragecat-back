@@ -10,7 +10,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class EvaluationResponse {
+public class EvaluationBody {
+    private Long id;
     private Integer score;
     private String comment;
     private String message;

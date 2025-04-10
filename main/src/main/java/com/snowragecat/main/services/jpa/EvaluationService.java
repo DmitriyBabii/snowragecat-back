@@ -1,5 +1,7 @@
 package com.snowragecat.main.services.jpa;
 
+import com.snowragecat.main.mappers.EvaluationMapper;
+import com.snowragecat.main.models.dtos.EvaluationBody;
 import com.snowragecat.main.models.entities.Evaluation;
 import com.snowragecat.main.models.entities.Lead;
 import com.snowragecat.main.models.enums.LeadStatus;
@@ -18,6 +20,7 @@ import java.util.Optional;
 public class EvaluationService {
     private final EvaluationRepository evaluationRepository;
     private final LeadRepository leadRepository;
+    private final EvaluationMapper evaluationMapper;
 
     public void save(EvaluateResponse evaluateResponse) {
         if (evaluateResponse.leadId() == null) {
@@ -30,6 +33,10 @@ public class EvaluationService {
             evaluationRepository.save(evaluation);
             log.info("Evaluation was saved");
         });
+    }
+
+    public Evaluation save(Evaluation evaluation){
+        return evaluationRepository.save(evaluation);
     }
 
     private static Evaluation mapToEntity(EvaluateResponse evaluateResponse, Lead lead) {

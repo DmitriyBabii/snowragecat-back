@@ -11,10 +11,12 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public final class LeadResponse {
+public final class LeadBody {
+    private Long id;
     private String name;
     private String email;
+    private String message;
     private String company;
     private BigDecimal budget;
-    private EvaluationResponse evaluation;
+    private EvaluationBody evaluation;
 }
